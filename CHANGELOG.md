@@ -7,6 +7,11 @@ what is on `devel` and not released yet (also in the
 
 ## Next update
 
+- **HDR output on Linux, and HDR10 for displays without scRGB** (Vulkan). Settings → Graphics → HDR output now also
+  works on Linux under Wayland. Where the system offers no scRGB output (Mesa drivers on Wayland), the game presents
+  HDR10 (BT.2020 with the PQ curve) instead, with the same paper white, peak and exposure settings; the overlay shows
+  which one is used. On compositors where SDL picks XWayland (such as sway), choosing HDR makes the game start on
+  Wayland from the next start, since X11 windows can't show HDR. Windows is unchanged.
 - **World editor: island extensions can join an island's ground** (#281, thanks @KelpyCode). New ground that meets an
   island's ground at the same height (up to the 30-unit step Link and villagers walk over) counts as joined instead of
   overlapping, and an extension's sides may go into the cliff under its top; walls, raised parts and roofs still count.
